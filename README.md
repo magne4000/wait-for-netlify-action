@@ -41,7 +41,7 @@ Basic Usage
 ```yaml
 steps:
   - name: Hold for Netlify
-    uses: magne4000/wait-for-netlify-action@v4
+    uses: magne4000/wait-for-netlify-action@v4.0.1
     id: waitForDeployment
     with:
       site_id: 'YOUR_SITE_ID' # See Settings > Site Details > General in the Netlify UI
@@ -69,7 +69,7 @@ jobs:
         run: npm ci
 
       - name: Hold for Netlify
-        uses: magne4000/wait-for-netlify-action@v4
+        uses: magne4000/wait-for-netlify-action@v4.0.1
         id: waitForDeployment
         with:
           site_id: '[your site ID here]'
@@ -116,7 +116,7 @@ jobs:
         run: |
           npm run build
       - name: Hold for Netlify
-        uses: magne4000/wait-for-netlify-action@v4
+        uses: magne4000/wait-for-netlify-action@v4.0.1
         id: waitForNetlifyDeploy
         with:
           site_id: 'YOUR_SITE_ID' # See Settings > Site Details > General in the Netlify UI
@@ -155,7 +155,7 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Hold for Netlify
-        uses: magne4000/wait-for-netlify-action@v4
+        uses: magne4000/wait-for-netlify-action@v4.0.1
         id: waitForDeployment
         with:
           site_id: 'YOUR_SITE_ID' # See Settings > Site Details > General in the Netlify UI
