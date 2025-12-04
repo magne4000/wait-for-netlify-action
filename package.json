@@ -1,6 +1,6 @@
 {
-  "name": "wait-for-netlify-action",
-  "version": "3.2.0",
+  "name": "@magne4000/wait-for-netlify-action",
+  "version": "4.0.0",
   "description": "A GitHub action that waits for a Netlify deployment preview for the current commit being built",
   "main": "index.js",
   "type": "module",
@@ -12,7 +12,7 @@
     "github",
     "netlify"
   ],
-  "author": "Evan Jacobs",
+  "author": "Joël Charles",
   "license": "ISC",
   "dependencies": {
     "@actions/core": "1.11.1",
