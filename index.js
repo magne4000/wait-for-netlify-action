@@ -1,15 +1,21 @@
 import * as core from '@actions/core';
 import * as github from '@actions/github';
-import axios from 'axios';
 
 const READY_STATES = ['ready', 'current'];
 
-function getNetlifyUrl(url) {
-  return axios.get(url, {
+async function getNetlifyUrl(url) {
+  const response = await fetch(url, {
     headers: {
       Authorization: `Bearer ${process.env.NETLIFY_TOKEN}`,
     },
   });
+
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+
+  const data = await response.json();
+  return { data };
 }
 
 const waitForDeployCreation = (url, commitSha, MAX_TIMEOUT, context) => {
@@ -79,8 +85,11 @@ const waitForUrl = async (url, MAX_TIMEOUT) => {
   const iterations = MAX_TIMEOUT / 3;
   for (let i = 0; i < iterations; i++) {
     try {
-      await axios.get(url);
-      return;
+      const response = await fetch(url);
+      if (response.ok) {
+        return;
+      }
+      throw new Error(`HTTP status ${response.status}`);
     } catch (e) {
       console.log(`URL ${url} unavailable, retrying...`);
       await new Promise((r) => setTimeout(r, 3000));
