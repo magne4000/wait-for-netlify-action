@@ -113,7 +113,7 @@ const run = async () => {
     let message = `Waiting for Netlify to create a deployment for git SHA ${commitSha}`;
 
     if (context) {
-      message += ` and context ${context}`
+      message += ` and context ${context}`;
     }
 
     console.log(message);
