@@ -3,6 +3,7 @@
   "version": "3.2.0",
   "description": "A GitHub action that waits for a Netlify deployment preview for the current commit being built",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

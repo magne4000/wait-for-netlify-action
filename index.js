@@ -1,6 +1,6 @@
-const core = require('@actions/core');
-const github = require('@actions/github');
-const axios = require('axios');
+import core from '@actions/core';
+import github from '@actions/github';
+import axios from 'axios';
 
 const READY_STATES = ['ready', 'current'];
 

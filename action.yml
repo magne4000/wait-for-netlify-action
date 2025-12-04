@@ -19,5 +19,5 @@ outputs:
   url:
     description: "The fully qualified deployment URL"
 runs:
-  using: "node16"
+  using: "node20"
   main: "index.js"
